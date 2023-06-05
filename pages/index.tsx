@@ -1,7 +1,13 @@
-import { questions as materialQuestion } from "@/assets/question";
+import {
+  questions as materialQuestion,
+  questions2,
+  questions3,
+  questionType,
+} from "@/assets/question";
 import { useState } from "react";
 
 import styled from "@/styles/Home.module.scss";
+import { Button } from "@/components/Button";
 
 // データを押した時の処理
 const handleOnClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -43,22 +49,47 @@ export default function Home() {
     }
   };
 
+  // 質問を変更する
+  function changeQuestion(question: questionType[]) {
+    setQuestions(question);
+  }
+
   return (
-    <div className={styled.inner}>
-      <button onClick={shuffleButton}>シャッフル</button>
-      <button onClick={reverseQuestion}>リバース</button>
-      <button onClick={toggleShow}>ALL ON/OFF</button>
-      {questions.map((question) => (
-        <span key={question.en}>
-          <div className={styled.question}>
-            <p onClick={(e) => handleOnClick(e)}>{question.en}</p>
-            <div className={styled.hidden}>
-              <p>{question.jp}</p>
+    <>
+      <header className={styled.header}>
+        <Button text="S" name="" onClick={shuffleButton} />
+        <Button text="R" name="" onClick={reverseQuestion} />
+        <Button text="T" name="" onClick={toggleShow} />
+      </header>
+      <div className={styled.inner}>
+        <Button
+          text="1"
+          name="first"
+          onClick={() => changeQuestion(materialQuestion)}
+        />
+        <Button
+          text="2"
+          name="second"
+          onClick={() => changeQuestion(questions2)}
+        />
+        <Button
+          text="3"
+          name="third"
+          onClick={() => changeQuestion(questions3)}
+        />
+
+        {questions.map((question) => (
+          <span key={question.en}>
+            <div className={styled.question}>
+              <p onClick={(e) => handleOnClick(e)}>{question.en}</p>
+              <div className={styled.hidden}>
+                <p>{question.jp}</p>
+              </div>
             </div>
-          </div>
-        </span>
-      ))}
-    </div>
+          </span>
+        ))}
+      </div>
+    </>
   );
 }
 
