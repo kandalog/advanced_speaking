@@ -17,6 +17,7 @@ const handleOnClick = (e: React.MouseEvent<HTMLDivElement>) => {
 
 export default function Home() {
   const [questions, setQuestions] = useState(materialQuestion);
+  const [title, setTitle] = useState("Who Dates Whom?");
 
   // シャッフルボタン
   const shuffleButton = () => {
@@ -62,20 +63,30 @@ export default function Home() {
         <Button text="T" name="" onClick={toggleShow} />
       </header>
       <div className={styled.inner}>
+        <h2 className={styled.title}>{title}</h2>
         <Button
           text="1"
           name="first"
-          onClick={() => changeQuestion(materialQuestion)}
+          onClick={() => {
+            changeQuestion(materialQuestion);
+            setTitle("Who Dates Whom?");
+          }}
         />
         <Button
           text="2"
           name="second"
-          onClick={() => changeQuestion(questions2)}
+          onClick={() => {
+            changeQuestion(questions2);
+            setTitle("Love & Marriage");
+          }}
         />
         <Button
           text="3"
           name="third"
-          onClick={() => changeQuestion(questions3)}
+          onClick={() => {
+            changeQuestion(questions3);
+            setTitle("Who Gets the Heart?");
+          }}
         />
         {questions.map((question) => (
           <span key={question.en}>
