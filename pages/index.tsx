@@ -2,6 +2,7 @@ import {
   questions as materialQuestion,
   questions2,
   questions3,
+  questions4,
   questionType,
 } from "@/assets/question";
 import { useState } from "react";
@@ -77,7 +78,11 @@ export default function Home() {
           name="third"
           onClick={() => changeQuestion(questions3)}
         />
-
+        <Button
+          text="4"
+          name="forth"
+          onClick={() => changeQuestion(questions4)}
+        />
         {questions.map((question) => (
           <span key={question.en}>
             <div className={styled.question}>
