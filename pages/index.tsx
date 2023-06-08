@@ -2,6 +2,7 @@ import {
   questions as materialQuestion,
   questions2,
   questions3,
+  questions4,
   questionType,
 } from "@/assets/question";
 import { useState } from "react";
@@ -86,6 +87,14 @@ export default function Home() {
           onClick={() => {
             changeQuestion(questions3);
             setTitle("Who Gets the Heart?");
+          }}
+        />
+        <Button
+          text="4"
+          name="forth"
+          onClick={() => {
+            changeQuestion(questions4);
+            setTitle("Unit6");
           }}
         />
         {questions.map((question) => (
