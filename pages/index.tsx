@@ -1,8 +1,8 @@
 import {
   questions as materialQuestion,
-  questions2,
-  questions3,
-  questions4,
+  // questions2,
+  // questions3,
+  // questions4,
   questionType,
 } from "@/assets/question";
 import { useState } from "react";
@@ -70,10 +70,10 @@ export default function Home() {
           name="first"
           onClick={() => {
             changeQuestion(materialQuestion);
-            setTitle("Who Dates Whom?");
+            setTitle("Season 1 Episode 1");
           }}
         />
-        <Button
+        {/* <Button
           text="2"
           name="second"
           onClick={() => {
@@ -96,7 +96,7 @@ export default function Home() {
             changeQuestion(questions4);
             setTitle("Unit6");
           }}
-        />
+        /> */}
         {questions.map((question) => (
           <span key={question.en}>
             <div className={styled.question}>
