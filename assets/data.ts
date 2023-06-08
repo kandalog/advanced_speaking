@@ -1,4 +1,4 @@
-export const jp = [
+export const en = [
   "どこへ向かっているんだ？",
   "待て",
   "でも君はとにかくそこへ向かっていると言ったばかりじゃないか",
@@ -14,7 +14,7 @@ export const jp = [
   "私はあなたを送ると言った",
   "トラックは他と一緒です",
 ];
-export const en = [
+export const jp = [
   "Where are you heading",
   "hold it",
   "But you just said you're going there anyway",
